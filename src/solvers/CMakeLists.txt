@@ -1,0 +1,9 @@
+add_library(solvers solver.cpp time_step.cpp)
+target_include_directories(solvers PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+if (USE_CUDA)
+    # set_target_properties(solvers PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+    set_source_files_properties(solver.cpp time_step.cpp PROPERTIES LANGUAGE CUDA)
+elseif (USE_HIP)
+    set_source_files_properties(solver.cpp time_step.cpp PROPERTIES LANGUAGE HIP)
+endif()

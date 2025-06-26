@@ -1,0 +1,8 @@
+.env
+solver
+data.out
+build
+.cache
+old/
+out/*
+run.sh

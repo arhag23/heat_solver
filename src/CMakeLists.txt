@@ -1,0 +1,2 @@
+add_subdirectory(init_conds)
+add_subdirectory(solvers)
